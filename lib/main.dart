@@ -22,19 +22,22 @@ class _HomeState extends State<Home> {
   void _converter (){
     double celsius = double.parse(celsiusController.text);
     double fahrenheit = celsius * 1.8 +32.0;
-    fahrenheitController.text = fahrenheit.toStringAsFixed(4);
+    fahrenheitController.text = fahrenheit.toStringAsFixed(2);
   }
 
   @override
   Widget build(BuildContext context) {
-    TextStyle styleDecoration = TextStyle(color: Colors.black87, fontSize: 20);
+    TextStyle styleDecoration = TextStyle(color: Colors.blue, fontSize: 20);
     TextStyle styleField = TextStyle(color: Colors.lightBlueAccent);
 
     RaisedButton raisedButton = RaisedButton(
+
       onPressed: (){
         if (_formKey.currentState.validate()){
         _converter();
-        }},
+        }
+        FocusScope.of(context).requestFocus(FocusNode());
+        },
       child: Text("Calcular"),
       color: Colors.blueAccent,
     );
@@ -59,11 +62,14 @@ class _HomeState extends State<Home> {
     );*/
 
     TextFormField tempCelsius = TextFormField(
-      decoration: InputDecoration(
-        labelText: 'Temp Celsius',
-        labelStyle: styleDecoration,
-      ),
       keyboardType: TextInputType.number,
+      decoration: InputDecoration(
+        labelText: 'Graus Celsius',
+        labelStyle: TextStyle(color: Colors.black, fontSize: 20),
+        border: OutlineInputBorder(),
+        suffixText: "ºC",
+      ),
+
       textAlign: TextAlign.center,
       style: styleField,
       controller: celsiusController,
@@ -74,12 +80,15 @@ class _HomeState extends State<Home> {
       },
     );
     TextFormField tempFahrenheit = TextFormField(
+      enabled: false,
+      keyboardType: TextInputType.number,
       decoration: InputDecoration(
-        labelText: 'Temp Fahrenheit',
-        labelStyle: styleDecoration,
+        labelText: 'Graus Fahrenheit',
+        labelStyle: TextStyle(color: Colors.black, fontSize: 20),
+        border: OutlineInputBorder(),
+        suffixText: "ºF",
       ),
       textAlign: TextAlign.center,
-      keyboardType: TextInputType.number,
       style: styleField,
       controller: fahrenheitController,
       /*validator: (value){
@@ -105,6 +114,7 @@ class _HomeState extends State<Home> {
         //icon,
         imgLogo,
         tempCelsius,
+        Divider(),
         tempFahrenheit,
         containerBtn,
       ],
