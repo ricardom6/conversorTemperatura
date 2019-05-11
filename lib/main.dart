@@ -27,10 +27,20 @@ class _HomeState extends State<Home> {
 
     );
     Icon icon = Icon(Icons.wb_sunny, size: 120, color: Colors.yellow,);
+    TextField tempCelsius = TextField(
+      decoration: InputDecoration(
+          labelText: 'Temp Celsius'
+      ),
+      keyboardType: TextInputType.number,);
+    TextField tempFahrenheit = TextField(
+      decoration: InputDecoration(
+          labelText: 'Temp Fahrenheit'
+      ),
+      keyboardType: TextInputType.number,);
     Column column = Column(
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: <Widget>[
-        icon,
+        icon, tempCelsius, tempFahrenheit,
 
       ],
     );
