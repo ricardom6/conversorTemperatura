@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 void main() => runApp(MaterialApp(
+  debugShowCheckedModeBanner: false,
   home: Home(),
 ));
 
@@ -25,10 +26,22 @@ class _HomeState extends State<Home> {
       ],
 
     );
+    Icon icon = Icon(Icons.wb_sunny, size: 120, color: Colors.yellow,);
+    Column column = Column(
+      crossAxisAlignment: CrossAxisAlignment.stretch,
+      children: <Widget>[
+        icon,
+
+      ],
+    );
 
 
       Scaffold scaffold = Scaffold(
         appBar: appBar,
+       backgroundColor: Colors.white,
+
+
+        body: column,
         );
       return scaffold;
     }
