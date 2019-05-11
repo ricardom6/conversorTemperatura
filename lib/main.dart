@@ -13,9 +13,14 @@ class Home extends StatefulWidget {
 class _HomeState extends State<Home> {
   @override
   Widget build(BuildContext context) {
-    TextStyle styleDecoration =
-        TextStyle(color: Colors.black87, fontSize: 20);
+    TextStyle styleDecoration = TextStyle(color: Colors.black87, fontSize: 20);
     TextStyle styleField = TextStyle(color: Colors.lightBlueAccent);
+
+    RaisedButton raisedButton = RaisedButton(
+      onPressed: () {},
+      child: Text("Calcular"),
+      color: Colors.blueAccent,
+    );
 
     AppBar appBar = AppBar(
       title: Text("Conversor de Temperatura"),
@@ -52,12 +57,19 @@ class _HomeState extends State<Home> {
       style: styleField,
     );
 
+    Container containerBtn = Container(
+      padding: EdgeInsets.all(8),
+      height: 100.0,
+      child: raisedButton,
+    );
+
     Column column = Column(
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: <Widget>[
         icon,
         tempCelsius,
         tempFahrenheit,
+        containerBtn,
       ],
     );
 
