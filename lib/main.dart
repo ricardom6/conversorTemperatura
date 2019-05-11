@@ -119,7 +119,7 @@ class _HomeState extends State<Home> {
     );
     //Container containerColuna =
       //  Container(padding: EdgeInsets.all(8), child: column);
-//comente
+
     Scaffold scaffold = Scaffold(
       appBar: appBar,
       backgroundColor: Colors.white,
