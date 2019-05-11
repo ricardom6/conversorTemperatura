@@ -63,8 +63,9 @@ class _HomeState extends State<Home> {
       child: raisedButton,
     );
     ListView column = ListView(
+      padding: EdgeInsets.all(10),
       shrinkWrap: true,
-      
+
       //crossAxisAlignment: CrossAxisAlignment.stretch,
       children: <Widget>[
         icon,
@@ -73,13 +74,13 @@ class _HomeState extends State<Home> {
         containerBtn,
       ],
     );
-    Container containerColuna =
-        Container(padding: EdgeInsets.all(8), child: column);
-
+    //Container containerColuna =
+      //  Container(padding: EdgeInsets.all(8), child: column);
+//comente
     Scaffold scaffold = Scaffold(
       appBar: appBar,
       backgroundColor: Colors.white,
-      body: containerColuna,
+      body: column,
     );
     return scaffold;
   }
