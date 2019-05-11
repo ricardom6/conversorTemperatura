@@ -62,11 +62,13 @@ class _HomeState extends State<Home> {
       height: 100.0,
       child: raisedButton,
     );
-    ListView column = ListView(
-      padding: EdgeInsets.all(10),
-      shrinkWrap: true,
 
-      //crossAxisAlignment: CrossAxisAlignment.stretch,
+
+    //ListView column = ListView(
+    //  padding: EdgeInsets.all(10),
+    //  shrinkWrap: true,
+    Column column =  Column(
+      crossAxisAlignment: CrossAxisAlignment.stretch,
       children: <Widget>[
         icon,
         tempCelsius,
@@ -74,13 +76,17 @@ class _HomeState extends State<Home> {
         containerBtn,
       ],
     );
+    SingleChildScrollView singleChildScrollView = SingleChildScrollView(
+      child: column,
+      padding: EdgeInsets.fromLTRB(10, 0, 10, 0),
+    );
     //Container containerColuna =
       //  Container(padding: EdgeInsets.all(8), child: column);
 //comente
     Scaffold scaffold = Scaffold(
       appBar: appBar,
       backgroundColor: Colors.white,
-      body: column,
+      body: singleChildScrollView,
     );
     return scaffold;
   }
