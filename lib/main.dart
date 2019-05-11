@@ -50,11 +50,13 @@ class _HomeState extends State<Home> {
         )
       ],
     );
-    Icon icon = Icon(
+
+    Image imgLogo = Image.asset("images/logo.png", height: 120, width: 120,);
+    /*Icon icon = Icon(
       Icons.wb_sunny,
       size: 120,
       color: Colors.yellow,
-    );
+    );*/
 
     TextFormField tempCelsius = TextFormField(
       decoration: InputDecoration(
@@ -100,7 +102,8 @@ class _HomeState extends State<Home> {
     Column column =  Column(
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: <Widget>[
-        icon,
+        //icon,
+        imgLogo,
         tempCelsius,
         tempFahrenheit,
         containerBtn,
